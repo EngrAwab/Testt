@@ -1,12 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My First Webjijiisite</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Gen IC Project</title>
+    <style>
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0055ff;
+            --bg: #0a0b10;
+            --card-bg: #161b22;
+            --text: #e6edf3;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #0a0b10 30%, #002d5e 100%);
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+
+        .details-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #30363d;
+            margin-bottom: 50px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .member-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #30363d;
+            border: 3px solid var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .circle:hover { transform: scale(1.05); }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .supervisor-section {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .supervisor-circle {
+            border-color: #ffaa00; /* Gold border for supervisors */
+            width: 150px;
+            height: 150px;
+        }
+
+        h2 { text-align: center; margin-bottom: 40px; color: var(--primary); }
+    </style>
+</head>
 <body>
-<h1>Welcome to My Website</h1>
-<p>This website is hosted for free using GitHub Pages.</p>
+
+    <header>
+        <h1>Project Silicon-X</h1>
+        <p>Designing the future of high-performance Integrated Circuits.</p>
+    </header>
+
+    <div class="container">
+        <section class="details-section">
+            <h2>IC Specifications & Overview</h2>
+            <p>Our custom-designed IC focuses on <strong>low-power consumption</strong> and <strong>high-speed data processing</strong>. Utilizing a 7nm architecture, this chip is engineered for specific applications in edge computing and AI acceleration.</p>
+            <ul>
+                <li>Architecture: Custom RISC-based Core</li>
+                <li>Process Node: 7nm FinFET</li>
+                <li>Target Frequency: 3.2 GHz</li>
+                <li>Application: Real-time Signal Processing</li>
+            </ul>
+        </section>
+
+        <section class="supervisor-section">
+            <h2>Project Supervisors</h2>
+            <div class="team-grid" style="justify-content: center; display: flex; flex-wrap: wrap; gap: 40px;">
+                <div class="member-card">
+                    <div class="circle supervisor-circle">
+                        <img src="https://via.placeholder.com/150" alt="Supervisor 1">
+                    </div>
+                    <span>Lead Supervisor</span>
+                </div>
+                <div class="member-card">
+                    <div class="circle supervisor-circle">
+                        <img src="https://via.placeholder.com/150" alt="Supervisor 2">
+                    </div>
+                    <span>Technical Mentor</span>
+                </div>
+                <div class="member-card">
+                    <div class="circle supervisor-circle">
+                        <img src="https://via.placeholder.com/150" alt="Supervisor 3">
+                    </div>
+                    <span>Research Advisor</span>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 60px;">
+            <h2>Engineering Team (11 Members)</h2>
+            <div class="team-grid" id="team-container">
+                </div>
+        </section>
+    </div>
+
+    <script>
+        // Generate 11 team members dynamically
+        const container = document.getElementById('team-container');
+        for (let i = 1; i <= 11; i++) {
+            container.innerHTML += `
+                <div class="member-card">
+                    <div class="circle">
+                        <img src="https://via.placeholder.com/120" alt="Member ${i}">
+                    </div>
+                    <span>Member ${i}</span>
+                </div>
+            `;
+        }
+    </script>
 
 </body>
 </html>
